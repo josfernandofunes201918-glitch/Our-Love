@@ -421,9 +421,9 @@
       </div>
 
       <!-- Música opcional si tú agregas musica.mp3 -->
-      <audio id="music" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-      </audio>
+ <!-- Música -->
+<!-- Música -->
+<audio id="music" src="musica.mp3" loop></audio>
     </div>
   </section>
 
@@ -570,18 +570,16 @@ Amo tu sonrisa, tu risa, adoro tus ojos cafés, amo tus camanances, y sin duda a
     // ==========================
     const music = document.getElementById("music");
     let playing = false;
+function toggleMusic() {
+  const music = document.getElementById("music");
 
-    function toggleMusic() {
-      if (!playing) {
-        music.play().catch(() => {
-          alert("Si no tienes musica.mp3, usa el botón de YouTube 😅");
-        });
-        playing = true;
-      } else {
-        music.pause();
-        playing = false;
-      }
-    }
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
 
     function openYouTube() {
       window.open("https://www.youtube.com/watch?v=JZiZgbrY0EI", "_blank");
@@ -673,4 +671,5 @@ Amo tu sonrisa, tu risa, adoro tus ojos cafés, amo tus camanances, y sin duda a
   </script>
 </body>
 </html>
+
 
